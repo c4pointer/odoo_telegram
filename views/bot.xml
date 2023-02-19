@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id = "bot_class_form_view" model = "ir.ui.view">
+        <field name = "name">bot.model.form</field>
+        <field name = "model">bot.model</field>
+        <field name ="arch" type="xml">
+            <form string="UAH">
+                <sheet>
+                    <group>
+                        <field name = "name"/>
+                        <field name = "usd"/>
+                        <field name = "eur"/>
+                        <field name = "sell_data"/>
+                        <field name = "buy_data"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id= "action_model" model = "ir.actions.act_window">
+        <field name="name">Currency data</field>
+        <field name="res_model">bot.model</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name ="help" type = "html">
+            <p class = "o_view_noncontent_smiling_face">
+                Create  Bot details
+            </p>
+        </field>
+    </record>
+
+    <menuitem id = "bot_menu" name = "Bot"/>
+    <menuitem id="bot_cur_menu" parent="bot_menu" name="Bot" action = "action_model" sequence= "6" />
+
+</odoo>
