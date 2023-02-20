@@ -7,11 +7,17 @@
             <form string="UAH">
                 <sheet>
                     <group>
-                        <field name = "name"/>
-                        <field name = "usd"/>
-                        <field name = "eur"/>
-                        <field name = "sell_data"/>
-                        <field name = "buy_data"/>
+                        <field name = "name" string = "Bank name"/>
+                        <field name = "eur" string="Currency name"/>
+                        <field name = "sell_data_eur"/>
+                        <field name = "buy_data_eur"/>
+                    </group>
+
+                    <group>
+                        <field name = "name" string = "Bank name"/>
+                        <field name = "usd" string="Currency name"/>
+                        <field name = "sell_data_usd"/>
+                        <field name = "buy_data_usd"/>
                     </group>
                 </sheet>
             </form>
@@ -19,7 +25,7 @@
     </record>
 
     <record id= "action_model" model = "ir.actions.act_window">
-        <field name="name">Currency data</field>
+        <field name="name">Collected Currency data </field>
         <field name="res_model">bot.model</field>
         <field name="view_mode">kanban,tree,form</field>
         <field name ="help" type = "html">
