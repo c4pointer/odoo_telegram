@@ -2,7 +2,7 @@
 <odoo>
     <record id = "bot_class_form_view" model = "ir.ui.view">
         <field name = "name">bot.model.form</field>
-        <field name = "model">bot.model</field>
+        <field name = "model" >bot.model</field>
         <field name ="arch" type="xml">
             <form string="UAH">
                 <sheet>
@@ -12,7 +12,8 @@
                         <field name = "sell_data_eur"/>
                         <field name = "buy_data_eur"/>
                     </group>
-
+                </sheet>
+                <sheet>
                     <group>
                         <field name = "name" string = "Bank name"/>
                         <field name = "usd" string="Currency name"/>
@@ -30,7 +31,7 @@
         <field name="view_mode">kanban,tree,form</field>
         <field name ="help" type = "html">
             <p class = "o_view_noncontent_smiling_face">
-                Create  Bot details
+                Create Bot details
             </p>
         </field>
     </record>
