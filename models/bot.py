@@ -10,3 +10,5 @@ class Bot(models.Model):
     buy_data_usd = fields.Float(string = "Buy")
     sell_data_eur = fields.Float(string = "Sell")
     buy_data_eur = fields.Float(string = "Buy")
+    telegram_user = fields.Char(string="Requested By: ")
+    write_date = fields.Datetime()

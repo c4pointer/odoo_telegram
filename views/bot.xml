@@ -4,35 +4,63 @@
         <field name = "name">bot.model.form</field>
         <field name = "model" >bot.model</field>
         <field name ="arch" type="xml">
-            <form string="UAH">
-                <sheet>
-                    <group>
-                        <field name = "name" string = "Bank name"/>
-                        <field name = "eur" string="Currency name"/>
-                        <field name = "sell_data_eur"/>
-                        <field name = "buy_data_eur"/>
+            <sheet>
+                <form string="UAH">
+                    <group name = "telegram_user"  string = "Requested By: ">
+                        <field name = "telegram_user" />
+                    
+                        <group  string = "Currency rate for EUR"  >
+                            <field name = "write_date" />
+                            <field name = "name" string = "Bank name"/>
+                            <field name = "eur" string="Currency name"/>
+                            <field name = "sell_data_eur"/>
+                            <field name = "buy_data_eur"/>
+                            <!-- <field name = "telegram_user" /> -->
+                        </group>
+                        <group string = "Currency rate for USD" >
+                            <field name = "write_date" />
+                            <field name = "name" string = "Bank name"/>
+                            <field name = "usd" string="Currency name"/>
+                            <field name = "sell_data_usd"/>
+                            <field name = "buy_data_usd"/>
+                            <!-- <field name = "telegram_user" /> -->
+                        </group>
                     </group>
-                </sheet>
-                <sheet>
-                    <group>
-                        <field name = "name" string = "Bank name"/>
-                        <field name = "usd" string="Currency name"/>
-                        <field name = "sell_data_usd"/>
-                        <field name = "buy_data_usd"/>
-                    </group>
-                </sheet>
-            </form>
+                </form>
+            </sheet>
         </field>
     </record>
 
     <record id= "action_model" model = "ir.actions.act_window">
         <field name="name">Collected Currency data </field>
         <field name="res_model">bot.model</field>
-        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_mode">tree,kanban,form</field>
         <field name ="help" type = "html">
             <p class = "o_view_noncontent_smiling_face">
                 Create Bot details
             </p>
+        </field>
+    </record>
+    <record id="bot_tree_view" model="ir.ui.view">
+        <field name="name">bot.model.tree</field>
+        <field name="model">bot.model</field>
+         <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <sheet>
+                <group>
+                    <tree string="Tour">
+                        <field name="name"/>
+                        <field name="eur"/>
+                        <field name="sell_data_eur"/>
+                        <field name="buy_data_eur"/>
+                        <field name="usd"/>
+                        <field name="sell_data_usd"/>
+                        <field name="buy_data_usd"/>
+                        <field name = "telegram_user" />
+                        <field name = "write_date" />
+                    </tree>
+                </group>
+            </sheet>
         </field>
     </record>
 
